@@ -1,3 +1,54 @@
-.title {
-  color: red;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: steelblue;
+}
+
+img {
+  width: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #dedefe;
+}
+
+header {
+  background-color: #234545;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo,
+.navlink {
+  padding: 0 100px;
+}
+.navlink {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.menu-link {
+  color: #fff;
+  padding-left: 20px;
+  font-weight: 600;
+}
+
+.menu-link:hover {
+  background-color: #244dd1;
 }
