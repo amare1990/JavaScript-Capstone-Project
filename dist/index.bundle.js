@@ -115,7 +115,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n\n\nconst title = document.createElement('h1');\ntitle.className = 'title';\ntitle.innerHTML = 'Welcome!';\n\n//# sourceURL=webpack://javascript-capstone-project/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n\n\nconst title = document.createElement('h1');\ntitle.className = 'title';\ntitle.innerHTML = 'Welcome!';\nconst wrapper = document.querySelector('.wrapper');\nwrapper.append(title);\n\n//# sourceURL=webpack://javascript-capstone-project/./src/index.js?");
 
 /***/ })
 
