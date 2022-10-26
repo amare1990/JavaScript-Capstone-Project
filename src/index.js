@@ -32,7 +32,7 @@ window.onload = async () => {
           </div>
           <div class="likes-number"> 
             <span class="number-span> </span>
-            <p class="like-text"> likes</p>
+            <p class="like-text"> likes </p>
           </div>
           <button type="button" class="comment-btn">Comments</button>
         </div>
