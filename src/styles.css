@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Open Sans', sans-serif;
   font-style: normal;
   font-size: 16px;
   font-weight: 400;
@@ -25,10 +25,11 @@ img {
 }
 
 header {
-  background-color: #234545;
+  background-color: #23180d;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  line-height: 22px;
 }
 
 .logo,
@@ -40,8 +41,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .menu-link {
@@ -54,7 +55,17 @@ header {
   background-color: #244dd1;
 }
 
-.logo-image {
-  background-color: red;
-  color: yellow;
+.meal-serach {
+  margin-left: 10px;
+  width: 100px;
+  height: 30px;
+  padding-left: 10px;
+}
+
+.active-link {
+  background-color: #c52d2f;
+  padding: 5px 12px;
+  border-radius: 3px;
+  line-height: 24px;
+  display: inline-block;
 }
