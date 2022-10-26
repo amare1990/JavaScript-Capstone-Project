@@ -22,7 +22,7 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    assetModuleFilename: 'images/[hash][ext][query]',
+    assetModuleFilename: 'src/resources/[name].[ext]',
   },
   optimization: {
 
@@ -40,9 +40,10 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.png/,
-        type: 'asset/resource',
-      },
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff)$/,
+        type: 'asset/resource'
+     },
+     
     ],
 
   },

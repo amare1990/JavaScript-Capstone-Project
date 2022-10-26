@@ -1,7 +1,10 @@
 import './styles.css';
+import logo from './assets/resource/logo.png';
 
-const title = document.createElement('h1');
-title.className = 'title';
-title.innerHTML = 'Welcome!';
-const wrapper = document.querySelector('.wrapper');
-wrapper.append(title);
+const logoImage = new Image();
+logoImage.src = logo;
+logoImage.className = 'logo-img';
+logoImage.alt = 'Logo Image';
+
+const logoDiv = document.querySelector('.logo');
+logoDiv.append(logoImage);
