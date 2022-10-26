@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Open Sans', sans-serif;
   font-style: normal;
   font-size: 16px;
   font-weight: 400;
@@ -44,20 +44,22 @@ header {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.menu-item {
+  padding-left: 20px;
+}
 
 .menu-link {
   color: #fff;
-  padding-left: 20px;
   font-weight: 600;
 }
 
-.menu-link:hover {
-  background-color: #244dd1;
-}
-
-.logo-image {
-  background-color: red;
-  color: yellow;
+.active,
+.menu-link:hover  {
+  background-color: #c52d2f;
+  padding: 5px 12px;
+  border-radius: 3px;
+  line-height: 24px;
+  display: inline-block;
 }
 
 .meal-img {
@@ -73,6 +75,48 @@ header {
 }
 
 .title,
-.like {
+.like,
+.like-text {
   color: #fff;
 } 
+
+.forum-links-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.forum-links {
+  display: flex;
+  align-items: center;
+}
+
+.meal-search {
+  width: 120px;
+  padding: 5px 0 5px 10px;
+  border-radius: 4px;
+  background-color: #fff;
+  margin-left: 10px;
+}
+
+.meal-description {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen  and (max-width: 767.98px) {
+  .navlink {
+    display: none;
+  }
+
+  .humburger {
+    margin-right: 20px;
+    border: none;
+    font-size: 24px;
+    background-color: #fff;
+  }
+}
