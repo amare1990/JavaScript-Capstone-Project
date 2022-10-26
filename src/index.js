@@ -15,6 +15,7 @@ const mobileMenu = document.querySelector('.mobile-menu');
 humburger.addEventListener('click', (e) => {
   e.preventDefault();
   navLinks.style.display = 'flex';
+  navLinks.style.flexDirection = 'column';
   navLinks.style.justifyContent = 'center';
   mobileMenu.append(navLinks);
   humburger.addEventListener('click', (e) => {
