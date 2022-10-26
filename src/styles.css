@@ -1,3 +1,30 @@
 .title {
   color: red;
 }
+
+  .copyright  {
+    padding: 40px 0px 0px 0px;
+    bottom: 0;
+    width: 100%;
+    margin: 0px;
+    border: 5px solid #000;
+  }
+
+ #down {
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/
+    height: 40px;
+    background: grey;
+    padding: 0px;
+    margin: 0px;
+    border: 5px solid #000;
+}
+
+footer {
+  padding: 500px 10px 0px 0px;
+  margin: 0px;
+  width:80%;
+    border: 5px solid #000;
+}
