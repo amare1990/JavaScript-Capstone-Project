@@ -22,7 +22,7 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    assetModuleFilename: 'src/assets/resources/[name].[ext]'
+    assetModuleFilename: 'src/assets/resources/[name].[ext]',
   },
   optimization: {
 
