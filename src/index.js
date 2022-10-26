@@ -8,3 +8,15 @@ logoImage.alt = 'Logo Image';
 
 const logoDiv = document.querySelector('.logo');
 logoDiv.append(logoImage);
+
+const humburger = document.querySelector('.humburger');
+const navLinks = document.querySelector('.navlink');
+const mobileMenu = document.querySelector('.mobile-menu');
+humburger.addEventListener('click', (e) => {
+  navLinks.style.display = 'flex';
+  navLinks.style.justifyContent = 'center';
+  mobileMenu.append(navLinks);
+  humburger.addEventListener('click', (e) => {
+    navLinks.style.display = 'none';
+  });
+} );
