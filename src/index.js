@@ -18,6 +18,7 @@ window.onload = async () => {
   const menuArray = await getMenu();
   // console.log('post like result= '+clickLoveBtn(menuArray[0].idMeal))
   const likesArray = await getNumberOfLikes(); 
+  console.log('likes number for the fifth: '+likesArray[4].likes);
 
   const menuGrids = document.querySelector('.menu-grids');
   console.log('likesArray= '+likesArray[0].item_id);
@@ -35,7 +36,7 @@ window.onload = async () => {
             </div>
           </div>
           <div class="likes-number"> 
-            <span class="number-span"> </span>
+            <span class="number-span"> ${likesArray[i].likes} </span>
             <p class="like-text"> likes </p>
           </div>
           <button type="button" class="comment-btn">Comments</button>
