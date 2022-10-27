@@ -105,6 +105,18 @@ header {
   justify-content: space-around;
 }
 
+.like-btn {
+  cursor: pointer;
+}
+
+.like-btn:active {
+  color: rgb(228, 35, 228);
+}
+
+.like-btn:hover {
+  color: purple;
+}
+
 .hide {
   display: none;
 }

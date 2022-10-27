@@ -1,10 +1,10 @@
 // curl -X POST -d 'name -Amare' https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps to create API ID
 
-const clickLoveBtn = async (itemId) => {
+const clickLoveBtn = async (menuId) => {
   const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WCijE8yJ7svuzQLIyTFd/likes', {
     method: 'POST',
     body: JSON.stringify({
-      item_id: itemId,
+      item_id: menuId,
     }),
     headers: {
       'Content-Type': 'application/json',
