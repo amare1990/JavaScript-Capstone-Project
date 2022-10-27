@@ -64,6 +64,7 @@ window.onload = async () => {
       e.preventDefault();
       clickLoveBtn(menuItem.idMeal);
       menuItem.likes += 1;
+      likesFigure.innerHTML = `${menuItem.likes}`; // To display the updated number of likes before refreshing the page
     }); 
   }); // End of forEach loop
 }; // End of window onload functions
