@@ -41,19 +41,9 @@ window.onload = async () => {
             showPopup(mealWithLike.idMeal);
           });
         });
-      </div>`;
+      </div>;
     const parsedElement = parser.parseFromString(mealsGridsSring, 'text/html')
       .body.firstChild;
 
     menuGrids.append(parsedElement);
-
-    /* const likeBtn = parsedElement.querySelector('.like-btn');
-    const likesFigure = document.querySelector('.number-span');
-    likeBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      clickLoveBtn(menuArray[i].idMeal);
-      menuArray[i].likes += 1;
-      likesFigure.innerHTML = `${menuArray[i].likes}`;
-    }); */
-  } // End of for loop
-}; // End of window onload functions
+  };
