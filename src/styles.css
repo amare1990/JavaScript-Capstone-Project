@@ -112,8 +112,8 @@ header {
 /* Footer style */
 .footer {
   width: 100%;
-  padding: 1.5em 2em;
-  font-size: 2em;
+  padding: -6em 1em;
+  font-size: 1em;
   background-color: #10141a;
   color: #d2d1d3;
   border: 3px solid;
@@ -142,7 +142,7 @@ header {
   .humburger {
     margin-right: 20px;
     border: none;
-    font-size: 24px;
+    font-size: 15px;
     background-color: #fff;
   }
 }
