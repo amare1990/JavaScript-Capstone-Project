@@ -8,3 +8,22 @@ footer {
 .copyright {
   color: #fff;
 }
+.footer {
+  width: 100%;
+  padding: 1.5em 2em;
+  font-size: 2em;
+  background-color: #10141a;
+  color: #d2d1d3;
+  border: 3px solid;
+}
+
+.footer a {
+  color: #e1362c;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: green;
+  transition: all 0.3s ease-in;
+  transform: scale(1.1);
+}
