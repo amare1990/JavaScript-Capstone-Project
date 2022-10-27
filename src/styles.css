@@ -110,11 +110,23 @@ header {
 }
 
 .like-btn:active {
-  color: rgb(228, 35, 228);
+  color: rgb(228, 35, 115);
 }
 
 .like-btn:hover {
   color: purple;
+}
+
+.likes-number {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3px;
+}
+
+.number-span {
+  color: #fff;
+  font-weight: 700;
 }
 
 .hide {
