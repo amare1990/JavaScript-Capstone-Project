@@ -2,7 +2,7 @@ import './styles.css';
 import getMenu from './modules/getmenu.js';
 
 import logo from './assets/resources/logo.png';
-import { clickLoveBtn, getNumberOfLikes } from './modules/likes.js'; 
+import { clickLoveBtn, getNumberOfLikes } from './modules/likes.js';
 
 const parser = new DOMParser();
 
@@ -16,13 +16,12 @@ logoDiv.append(logoImage);
 
 window.onload = async () => {
   const menuArray = await getMenu();
-  const likesArray = await getNumberOfLikes(); 
+  const likesArray = await getNumberOfLikes();
   const likedMenuArray = [];
 
-
-  for(let i = 0; i < menuArray.length; i++) {
-    for(let j = 0; j < likesArray.length; j++) {
-      if(likesArray[j].item_id === menuArray[i].idMeal){
+  for (let i = 0; i < menuArray.length; i += 1) {
+    for (let j = 0; j < likesArray.length; j += 1) {
+      if (likesArray[j].item_id === menuArray[i].idMeal) {
         likedMenuArray.push({
           idMeal: menuArray[i].idMeal,
           strMealThumb: menuArray[i].strMealThumb,
@@ -30,13 +29,11 @@ window.onload = async () => {
           likes: likesArray.length === null ? 0 : likesArray[j].likes,
         });
       }
-
     }
   }
 
   const menuGrids = document.querySelector('.menu-grids');
-  likedMenuArray.forEach(menuItem => {
-    
+  likedMenuArray.forEach((menuItem) => {
     const mealsGridsSring = `
       <div>
         <img src="${menuItem.strMealThumb}" class="meal-img" alt="Meal Image">
@@ -65,6 +62,6 @@ window.onload = async () => {
       clickLoveBtn(menuItem.idMeal);
       menuItem.likes += 1;
       likesFigure.innerHTML = `${menuItem.likes}`; // To display the updated number of likes before refreshing the page
-    }); 
+    });
   }); // End of forEach loop
 }; // End of window onload functions

@@ -10,7 +10,6 @@ const clickLoveBtn = async (menuId) => {
       'Content-Type': 'application/json',
     },
   });
-  console.log(response);
   const responseText = await response.text();
   return responseText;
 };
