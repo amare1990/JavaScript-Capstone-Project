@@ -16,15 +16,16 @@ logoDiv.append(logoImage);
 
 window.onload = async () => {
   const menuArray = await getMenu();
+  // console.log('post like result= '+clickLoveBtn(menuArray[0].idMeal))
   const likesArray = await getNumberOfLikes(); 
 
   const menuGrids = document.querySelector('.menu-grids');
-  console.log('idMeal= '+menuArray[0].idMeal);
+  console.log('likesArray= '+likesArray[0].item_id);
   for (let i = 0; i < menuArray.length; i += 1) {
     
     const mealsGridsSring = `
       <div>
-        <img src="${menuArray[i].strMealThumb}" alt="Meal Image" class="meal-img">
+        <img src="${menuArray[i].strMealThumb}" class="meal-img" alt="Meal Image">
           <div class="menu-description">
             <p class="title">${menuArray[i].strMeal}</p>
             <div class="like" id="${menuArray[i].idMeal}">        

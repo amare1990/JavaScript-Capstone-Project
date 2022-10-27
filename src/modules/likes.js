@@ -10,14 +10,15 @@ const clickLoveBtn = async (itemId) => {
       'Content-Type': 'application/json',
     },
   });
-  const responseJSON = await response.json();
-  return responseJSON;
+  console.log(response);
+  const responseText = await response.text();
+  return responseText;
 };
 
 const getNumberOfLikes = async () => {
   const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WCijE8yJ7svuzQLIyTFd/likes');
-  const responseText = await response.text();
-  return responseText;
+  const responseJSON = await response.json();
+  return responseJSON;
 };
 
 export { clickLoveBtn, getNumberOfLikes };
