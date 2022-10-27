@@ -16,29 +16,23 @@ logoDiv.append(logoImage);
 
 window.onload = async () => {
   const menuArray = await getMenu();
-  // console.log('post like result= '+clickLoveBtn(menuArray[0].idMeal))
   const likesArray = await getNumberOfLikes(); 
- /*  let likedMenuArray = [];
-  for(let i = 0; i < menuArray.length; i += 1) {
-    likedMenuArray = menuArray.filter((item) => {
-      likesArray.item_id === menuArray.idMeal;
-    });
-  } */
-  console.log('number of  entire= '+ menuArray.length);
+  const likedMenuArray = [];
 
-  const likedMenuArray = menuArray.map((menuItem) =>{
-    const likesFiltered = likesArray.filter((like) => like.item_id === menuItem.idMeal);
-    return {
-      strMealThumb: menuItem.strMealThumb,
-      strMeal: menuItem.strMeal,
-      idMeal: menuItem.idMeal,
-      likes: likesFiltered.length === 0 ? 0 : likesFiltered[0].likes,
-    };
 
-  });
+  for(let i = 0; i < menuArray.length; i++) {
+    for(let j = 0; j < likesArray.length; j++) {
+      if(likesArray[j].item_id === menuArray[i].idMeal){
+        likedMenuArray.push({
+          idMeal: menuArray[i].idMeal,
+          strMealThumb: menuArray[i].strMealThumb,
+          strMeal: menuArray[i].strMeal,
+          likes: likesArray.length === null ? 0 : likesArray[j].likes,
+        });
+      }
 
-  console.log('liked items = '+likedMenuArray);
-
+    }
+  }
 
   const menuGrids = document.querySelector('.menu-grids');
   likedMenuArray.forEach(menuItem => {
@@ -66,14 +60,10 @@ window.onload = async () => {
 
     const likeBtn = parsedElement.querySelector('.like-btn');
     const likesFigure = parsedElement.querySelector('.number-span');
-   // console.log('likesFigure elem: '+likesFigure)
     likeBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      console.log('idMeal= '+menuItem.idMeal);
       clickLoveBtn(menuItem.idMeal);
       menuItem.likes += 1;
-      likesFigure.innerHTML = `${menuItem.likes}`;
-      console.log("likwesfigure: "+ parseInt(likesFigure.innerHTML, 10) );
     }); 
   }); // End of forEach loop
 }; // End of window onload functions
