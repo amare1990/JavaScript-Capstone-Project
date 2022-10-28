@@ -179,7 +179,7 @@ header {
 }
 
 .btn-group {
-  background-color: #ffbb00;
+  background-color: #fb0;
   width: 150px;
   align-content: center;
 }
@@ -188,7 +188,7 @@ header {
 .subscribe {
   padding: 3px 0;
   border: none;
-  background-color: #ffbb00;
+  background-color: #fb0;
 }
 
 .horiz {
@@ -214,14 +214,9 @@ header {
 
 .item-counter {
   font-size: 24px;
-  font-weight: 700px;
+  font-weight: 700;
 }
-/* .counter-icon-homepage {
-  width: 200px;
-  height: 200px;
-  background-color: red;
-}
- */
+
 @media screen and (max-width: 767.98px) {
   .navlink {
     display: none;
