@@ -1,17 +1,22 @@
-import menuArray from "../index.js";
-
-
-test('Testing if the number of menus created is correct', () => {
-  // document.body.innerHTML = '<div class=".menu-item"></div>';
-  const lenMenuItem = (document.querySelector('.menu-grids')).childElementCount;
-  expect(menuArray.length).toBe(lenMenuItem);
-
-  /* document.body.innerHTML = '<div class="meals-section"><div>meal1</div></div>';
-  expect(menuArray.length).toBe(1); */
+/**
+* @jest-environment jsdom
+*/
+import { itemCounter } from "./itemscounter.js";
+const menuItem = document.querySelectorAll('.menu-grids > div');
+console.log('tesing count= '+menuItem.length)
+test('Testing if the number of menus is zero before fetching menu items from the API', () => {
+  document.body.innerHTML = '<section class="menu-grids"> </section>';
+  expect(itemCounter()).toBe(0); 
 });
-
-test('The testing should return 0 if the menu items are not fetched from the remote API', () => {
-  const emptyMenu = document.querySelector('.menu-grids');
-  emptyMenu.innerHTML = '';
-  expect(menuArray.length).toBe(0);
+test('Check if the number of menu items is one when div block is added',  ()=>{
+  document.body.innerHTML = '<section class="menu-grids"> <div class="menu-item"> menu1</div></section>';
+  expect(itemCounter()).toBe(1);
+});
+test('Check if the number of menu items is two when a section with two div blocks are added',  ()=>{
+  document.body.innerHTML = '<section class="menu-grids"> <div class="menu-item"> menu2</div> <div class="menu-item"> menu2</div></section>';
+  expect(itemCounter()).toBe(2);
+});
+test('Should return 0, i.e., inserting fetched data is unsuccessful due to wron section class',  ()=>{
+  document.body.innerHTML = '<section class="menu"> <div class="menu-item"> menu</div> </section>';
+  expect(itemCounter()).toEqual(0);
 });
