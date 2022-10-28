@@ -3,7 +3,9 @@ import getMenu from './modules/getmenu.js';
 
 import logo from './assets/resources/logo.png';
 import mealicon from './assets/resources/mealicon.png';
+import mealcountericon from './assets/resources/iconcounter.png';
 import { clickLoveBtn, getNumberOfLikes } from './modules/likes.js';
+/* import itemCounter from './modules/itemcounter.js'; */
 
 
 const parser = new DOMParser();
@@ -79,4 +81,15 @@ window.onload = async () => {
       likesFigure.innerHTML = `${menuItem.likes}`; // To display the updated number of likes before refreshing the page
     });
   }); // End of forEach loop
+
+  // Item Counter
+const mealCounterIcon = new Image();
+mealCounterIcon.src = mealcountericon;
+mealCounterIcon.className = 'counter-icon-homepage';
+mealCounterIcon.alt = 'Meal Icon in the Homepage';
+const mealCounterDiv = document.querySelector('.mealicon-counter');
+mealCounterDiv.append(mealCounterIcon);
+const mealCounter = document.querySelector('.item-counter');
+mealCounter.innerHTML = menuArray.length;
+
 }; // End of window onload functions
