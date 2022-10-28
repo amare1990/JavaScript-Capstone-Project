@@ -158,6 +158,47 @@ header {
   color: #fff;
 }
 
+/* Homepage styling */
+.homepage-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homepage-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.meal-title {
+  font-size: 36px;
+}
+
+.btn-group {
+  background-color: #ffbb00;
+  width: 150px;
+  align-content: center;
+}
+
+.paypal,
+.subscribe {
+  padding: 3px 0;
+  border: none;
+  background-color: #ffbb00;
+}
+
+.horiz {
+  width: 90%;
+  margin: 0 auto;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
 @media screen and (max-width: 767.98px) {
   .navlink {
     display: none;
