@@ -4,7 +4,7 @@ import './stylesheets/comment.css';
 import showPopup from './modules/commentsPopup.js';
 
 import logo from './assets/resources/logo.png';
-/* import { clickLoveBtn, getNumberOfLikes } from './modules/likes.js'; */
+import { clickLoveBtn, getNumberOfLikes } from './modules/likes.js'; 
 
 const parser = new DOMParser();
 
@@ -18,7 +18,7 @@ logoDiv.append(logoImage);
 
 window.onload = async () => {
   const menuArray = await getMenu();
-  /* const likesArray = await getNumberOfLikes(); */
+  const likesArray = await getNumberOfLikes(); 
 
   const menuGrids = document.querySelector('.menu-grids');
   for (let i = 0; i < menuArray.length; i += 1) {
@@ -43,23 +43,36 @@ window.onload = async () => {
 
     menuGrids.append(parsedElement);
 
-    /* const likeBtn = parsedElement.querySelector('.like-btn');
+     const likeBtn = parsedElement.querySelector('.like-btn');
     const likesFigure = document.querySelector('.number-span');
     likeBtn.addEventListener('click', (e) => {
       e.preventDefault();
       clickLoveBtn(menuArray[i].idMeal);
       menuArray[i].likes += 1;
       likesFigure.innerHTML = `${menuArray[i].likes}`;
-    }); */
+    }); 
 
     mealsSection.append(stringElement);
 
     const commentbtn = stringElement.querySelector('.comment-btn');
+    const popUpSection = document.querySelector('.popup-section');
+    // popUpSection.className = 'comment-wrapper';
+    popUpSection.hight = '100vh';
+    let str = `div class="popup-details"
+    <img src = "" alt = "Image in tghe popup" class="popup-img">
+    <div class="popup-desc">
+      <h3 class="title-comment> example <h3>
+    </div>
+    </div>
+    `;
+
+    const parsedComment = parser.parseFromString(str, 'text/html').body.firstChild;
+    popUpSection.append(parsedComment);
     commentbtn.addEventListener('click', (e) => {
       e.preventDefault();
-      popUpSection.classList.remove('hidden');
+      popUpSection.classList.remove('hide');
       showPopup(mealWithLike.idMeal);
     });
-  });
-  } // End of for loop
+  }; // End of tghe for loop
+  
 }; // End of window onload functions
