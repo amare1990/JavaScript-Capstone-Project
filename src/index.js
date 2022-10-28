@@ -1,5 +1,7 @@
 import './styles.css';
 import getMenu from './modules/getmenu.js';
+import './stylesheets/comment.css';
+import showPopup from './modules/commentsPopup.js';
 
 import logo from './assets/resources/logo.png';
 /* import { clickLoveBtn, getNumberOfLikes } from './modules/likes.js'; */
@@ -25,13 +27,13 @@ window.onload = async () => {
         <img src="${menuArray[i].strMealThumb}" alt="Meal Image" class="meal-img">
           <div class="meal-description">
             <p class="title">${menuArray[i].strMeal}</p>
-            <div class="like" id="${menuArray[i].idMeal}">        
+            <div class="like" id="${menuArray[i].idMeal}">
               <button type="button" class="click-like-btn">
               <i class="fa fa-heart like-btn"></i>
               </button>
             </div>
           </div>
-          <div class="likes-number"> 
+          <div class="likes-number">
             <span class="number-span"> </span>
             <p class="like-text"> likes </p>
           </div>
@@ -49,5 +51,15 @@ window.onload = async () => {
       menuArray[i].likes += 1;
       likesFigure.innerHTML = `${menuArray[i].likes}`;
     }); */
+
+    mealsSection.append(stringElement);
+
+    const commentbtn = stringElement.querySelector('.comment-btn');
+    commentbtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      popUpSection.classList.remove('hidden');
+      showPopup(mealWithLike.idMeal);
+    });
+  });
   } // End of for loop
 }; // End of window onload functions
