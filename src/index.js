@@ -2,7 +2,7 @@ import './styles.css';
 import getMenu from './modules/getmenu.js';
 
 import logo from './assets/resources/logo.png';
-/* import { clickLoveBtn, getNumberOfLikes } from './modules/likes.js'; */
+import { clickLoveBtn, getNumberOfLikes } from './modules/likes.js';
 
 const parser = new DOMParser();
 
@@ -16,23 +16,37 @@ logoDiv.append(logoImage);
 
 window.onload = async () => {
   const menuArray = await getMenu();
-  /* const likesArray = await getNumberOfLikes(); */
+  const likesArray = await getNumberOfLikes();
+  const likedMenuArray = [];
+
+  for (let i = 0; i < menuArray.length; i += 1) {
+    for (let j = 0; j < likesArray.length; j += 1) {
+      if (likesArray[j].item_id === menuArray[i].idMeal) {
+        likedMenuArray.push({
+          idMeal: menuArray[i].idMeal,
+          strMealThumb: menuArray[i].strMealThumb,
+          strMeal: menuArray[i].strMeal,
+          likes: likesArray.length === null ? 0 : likesArray[j].likes,
+        });
+      }
+    }
+  }
 
   const menuGrids = document.querySelector('.menu-grids');
-  for (let i = 0; i < menuArray.length; i += 1) {
+  likedMenuArray.forEach((menuItem) => {
     const mealsGridsSring = `
       <div>
-        <img src="${menuArray[i].strMealThumb}" alt="Meal Image" class="meal-img">
-          <div class="meal-description">
-            <p class="title">${menuArray[i].strMeal}</p>
-            <div class="like" id="${menuArray[i].idMeal}">        
+        <img src="${menuItem.strMealThumb}" class="meal-img" alt="Meal Image">
+          <div class="menu-description">
+            <p class="title">${menuItem.strMeal}</p>
+            <div class="like" id="${menuItem.idMeal}">        
               <button type="button" class="click-like-btn">
-              <i class="fa fa-heart like-btn"></i>
+                <i class="fa fa-heart like-btn"></i>
               </button>
             </div>
           </div>
           <div class="likes-number"> 
-            <span class="number-span"> </span>
+            <span class="number-span"> ${menuItem.likes} </span>
             <p class="like-text"> likes </p>
           </div>
           <button type="button" class="comment-btn">Comments</button>
@@ -41,13 +55,13 @@ window.onload = async () => {
 
     menuGrids.append(parsedElement);
 
-    /* const likeBtn = parsedElement.querySelector('.like-btn');
-    const likesFigure = document.querySelector('.number-span');
+    const likeBtn = parsedElement.querySelector('.like-btn');
+    const likesFigure = parsedElement.querySelector('.number-span');
     likeBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      clickLoveBtn(menuArray[i].idMeal);
-      menuArray[i].likes += 1;
-      likesFigure.innerHTML = `${menuArray[i].likes}`;
-    }); */
-  } // End of for loop
+      clickLoveBtn(menuItem.idMeal);
+      menuItem.likes += 1;
+      likesFigure.innerHTML = `${menuItem.likes}`; // To display the updated number of likes before refreshing the page
+    });
+  }); // End of forEach loop
 }; // End of window onload functions
