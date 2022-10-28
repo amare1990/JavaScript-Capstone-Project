@@ -1,10 +1,10 @@
 import './styles.css';
 import getMenu from './modules/getmenu.js';
-
 import logo from './assets/resources/logo.png';
 import mealicon from './assets/resources/mealicon.png';
 import mealcountericon from './assets/resources/iconcounter.png';
 import { clickLoveBtn, getNumberOfLikes } from './modules/likes.js';
+import { itemCounter } from './modules/itemscounter.js'; 
 
 const parser = new DOMParser();
 
@@ -29,6 +29,7 @@ logoIcon2.alt = 'Logo Icon in the Homepage';
 const logoIconDiv2 = document.querySelector('.logo-icon-home2');
 logoIconDiv2.append(logoIcon2);
 
+// let menuArray = [];
 window.onload = async () => {
   const menuArray = await getMenu();
   const likesArray = await getNumberOfLikes();
@@ -50,7 +51,7 @@ window.onload = async () => {
   const menuGrids = document.querySelector('.menu-grids');
   likedMenuArray.forEach((menuItem) => {
     const mealsGridsSring = `
-      <div>
+      <div class="menu-item">
         <img src="${menuItem.strMealThumb}" class="meal-img" alt="Meal Image">
           <div class="menu-description">
             <p class="title">${menuItem.strMeal}</p>
@@ -88,5 +89,5 @@ window.onload = async () => {
   const mealCounterDiv = document.querySelector('.mealicon-counter');
   mealCounterDiv.append(mealCounterIcon);
   const mealCounter = document.querySelector('.item-counter');
-  mealCounter.innerHTML = menuArray.length;
+  mealCounter.innerHTML = `${itemCounter()}`;
 }; // End of window onload functions
