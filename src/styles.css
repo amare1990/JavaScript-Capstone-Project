@@ -199,6 +199,29 @@ header {
   margin-bottom: 20px;
 }
 
+.total-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.item-counter-text,
+.item-counter {
+  color: #fff;
+}
+
+.item-counter {
+  font-size: 24px;
+  font-weight: 700px;
+}
+/* .counter-icon-homepage {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+ */
 @media screen and (max-width: 767.98px) {
   .navlink {
     display: none;
