@@ -2,7 +2,9 @@ import './styles.css';
 import getMenu from './modules/getmenu.js';
 
 import logo from './assets/resources/logo.png';
+import mealicon from './assets/resources/mealicon.png';
 import { clickLoveBtn, getNumberOfLikes } from './modules/likes.js';
+
 
 const parser = new DOMParser();
 
@@ -10,9 +12,22 @@ const logoImage = new Image();
 logoImage.src = logo;
 logoImage.className = 'logo-img';
 logoImage.alt = 'Logo Image';
-
 const logoDiv = document.querySelector('.logo');
 logoDiv.append(logoImage);
+
+const logoIcon = new Image();
+logoIcon.src = mealicon;
+logoIcon.className = 'logo-icon-homepage';
+logoIcon.alt = 'Logo Icon in the Homepage';
+const logoIconDiv = document.querySelector('.logo-icon-home');
+logoIconDiv.append(logoIcon);
+
+const logoIcon2 = new Image();
+logoIcon2.src = mealicon;
+logoIcon2.className = 'logo-icon-homepage';
+logoIcon2.alt = 'Logo Icon in the Homepage';
+const logoIconDiv2 = document.querySelector('.logo-icon-home2');
+logoIconDiv2.append(logoIcon2);
 
 window.onload = async () => {
   const menuArray = await getMenu();
