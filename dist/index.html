@@ -14,26 +14,60 @@
     <div class="wrapper">
       <header>
         <div class="logo">
-          <img src="./assets/logo-image.png" alt="Logo Imgae">
+          <!-- <img src="./assets/resource/logo.png" class="logo-image" alt="Logo Imgae"> -->
         </div>
         <ul class="navlink">
           <li class="menu-item">
-            <a href="#home" class="menu-link">Home</a>
+            <a href="#home" class="menu-link active">Home</a>
           </li>
           <li class="menu-item">
-            <a href="#menu" class="menu-link">Menu</a>
+            <a href="#menu" class="menu-link">API</a>
           </li>
-          <li class="menu-item">
-            <a href="#" class="menu-link"> <i class="fa fa-facebook-square"></i></a>
-          </li>
-          <li class="menu-item">
-            <a href="#" class="menu-link"> <i class="fa fa-twitter"></i></a>
-          </li>
-          <li class="menu-item">
-            <a href="#contact" class="menu-link">Contact us</a>
-          </li>
+          <li class="menu-item forum-links-wrapper">
+            <a href="#Forum" class="menu-link">Forum</a>
+           <ul class="forum-links">
+            <li class="menu-item">
+              <a href="#" class="menu-link"> <i class="fa fa-facebook-square"></i></a>
+            </li>
+            <li class="menu-item">
+              <a href="#" class="menu-link"> <i class="fa fa-twitter"></i></a>
+            </li>  
+           </ul>
+          </li>                 
+
+         <input type="search" placeholder="Search" class="meal-search">
         </ul>
       </header>
+      <section class="homepage" id="home">
+        <div class="homepage-container">
+          <div class="logo-icon-home"> </div>
+          <div class="homepage-desc">
+            <h1 class="meal-title">Welcome to TheMealDB</h1>
+            <p class="desc1">Welcome to TheMealDB: An open, crowd-sourced database of Recipes from around the world.</p>
+            <p class="desc2">We also offer a free JSON API for anyone wanting to use it, with additional features for subscribers.</p>
+            <div class="btn-group">
+              <button type="button" class="paypal">Paypal</button>
+              <button type="button" class="subscribe">Subscribe</button>
+            </div>
+            <p class="desc3">Click to Support $2 per month (cancel anytime)</p>
+            <p class="desc4">Currently 50 supporters</p>
+          </div>
+          <div class="logo-icon-home2"> </div>
+        </div>
+        <div class="horiz1 horiz"></div>
+        <div class="total-menu-item">
+          <div class="mealicon-counter"></div>
+          <p class="item-counter-text">Total Meals</p>
+          <span class="item-counter"></span>
+        </div>
+        <div class="horiz2 horiz"></div>
+      </section>
+      <section class="menu-grids" id="menu-section"></section>
     </div>
+    <footer class="footer" id="contact">
+      <p class="footer"> Copyright  </p> 
+        <a href="https://github.com/sonyco-4u">Ezema Anthony Sunday</a> and 
+        <a href="https://github.com/amare1990">Amare Kassa</a> 
+    </footer>
   </body>
 </html>
