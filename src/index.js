@@ -1,17 +1,17 @@
-import './styles.css';
-import getMenu from './modules/getmenu.js';
+import "./styles.css";
+import getMenu from "./modules/getmenu.js";
 
-import logo from './assets/resources/logo.png';
-import { clickLoveBtn, getNumberOfLikes } from './modules/likes.js';
+import logo from "./assets/resources/logo.png";
+import { clickLoveBtn, getNumberOfLikes } from "./modules/likes.js";
 
 const parser = new DOMParser();
 
 const logoImage = new Image();
 logoImage.src = logo;
-logoImage.className = 'logo-img';
-logoImage.alt = 'Logo Image';
+logoImage.className = "logo-img";
+logoImage.alt = "Logo Image";
 
-const logoDiv = document.querySelector('.logo');
+const logoDiv = document.querySelector(".logo");
 logoDiv.append(logoImage);
 
 window.onload = async () => {
@@ -32,36 +32,43 @@ window.onload = async () => {
     }
   }
 
-  const menuGrids = document.querySelector('.menu-grids');
+  const menuGrids = document.querySelector(".menu-grids");
   likedMenuArray.forEach((menuItem) => {
     const mealsGridsSring = `
       <div>
         <img src="${menuItem.strMealThumb}" class="meal-img" alt="Meal Image">
           <div class="menu-description">
             <p class="title">${menuItem.strMeal}</p>
-            <div class="like" id="${menuItem.idMeal}">        
+            <div class="like" id="${menuItem.idMeal}">
               <button type="button" class="click-like-btn">
                 <i class="fa fa-heart like-btn"></i>
               </button>
             </div>
           </div>
-          <div class="likes-number"> 
+          <div class="likes-number">
             <span class="number-span"> ${menuItem.likes} </span>
             <p class="like-text"> likes </p>
           </div>
-          <button type="button" class="comment-btn">Comments</button>
+          <button id="commentsBtn" onclick="alert('DISPLAY COMMENT');">Comments</button>
       </div>`;
-    const parsedElement = parser.parseFromString(mealsGridsSring, 'text/html').body.firstChild;
+    const parsedElement = parser.parseFromString(mealsGridsSring, "text/html")
+      .body.firstChild;
 
     menuGrids.append(parsedElement);
 
-    const likeBtn = parsedElement.querySelector('.like-btn');
-    const likesFigure = parsedElement.querySelector('.number-span');
-    likeBtn.addEventListener('click', (e) => {
+    const likeBtn = parsedElement.querySelector(".like-btn");
+    const likesFigure = parsedElement.querySelector(".number-span");
+    likeBtn.addEventListener("click", (e) => {
       e.preventDefault();
       clickLoveBtn(menuItem.idMeal);
       menuItem.likes += 1;
       likesFigure.innerHTML = `${menuItem.likes}`; // To display the updated number of likes before refreshing the page
     });
+
+    document.getElementById("myBtn").addEventListener("click", displayDate);
+
+    function displayDate() {
+      document.getElementById("demo").innerHTML = Date();
+    }
   }); // End of forEach loop
 }; // End of window onload functions
