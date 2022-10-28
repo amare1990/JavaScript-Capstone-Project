@@ -4,7 +4,7 @@ import logo from './assets/resources/logo.png';
 import mealicon from './assets/resources/mealicon.png';
 import mealcountericon from './assets/resources/iconcounter.png';
 import { clickLoveBtn, getNumberOfLikes } from './modules/likes.js';
-import { itemCounter } from './modules/itemscounter.js'; 
+import itemCounter from './modules/itemscounter.js';
 
 const parser = new DOMParser();
 
