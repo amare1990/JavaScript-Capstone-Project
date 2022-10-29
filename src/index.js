@@ -1,78 +1,76 @@
-import './styles.css';
-import getMenu from './modules/getmenu.js';
-import './stylesheets/comment.css';
-import showPopup from './modules/commentsPopup.js';
+import "./style.css";
+import "./stylesheets/slider.css";
+import "./stylesheets/meals.css";
+import "./stylesheets/comment.css";
+import slideShow from "./modules/slider.js";
+import getMeals from "./modules/getMeals.js";
+import showPopup from "./modules/commentsPopup.js";
+import { getLikes, postLike } from "./modules/getLikes.js";
+import ItemsCounter from "./modules/counter/itemsCounter.js";
 
-import logo from './assets/resources/logo.png';
-import { clickLoveBtn, getNumberOfLikes } from './modules/likes.js'; 
-
+const mealsSection = document.querySelector(".meals-section");
+const popUpSection = document.querySelector(".popup-section");
 const parser = new DOMParser();
 
-const logoImage = new Image();
-logoImage.src = logo;
-logoImage.className = 'logo-img';
-logoImage.alt = 'Logo Image';
+slideShow();
 
-const logoDiv = document.querySelector('.logo');
-logoDiv.append(logoImage);
+const init = async () => {
+  const likesArray = await getLikes();
+  const mealsArray = await getMeals();
 
-window.onload = async () => {
-  const menuArray = await getMenu();
-  const likesArray = await getNumberOfLikes(); 
+  const combinedArray = mealsArray.meals.map((meal) => {
+    const likeForThisMeal = likesArray.filter(
+      (likeObj) => likeObj.item_id === meal.idMeal
+    );
+    return {
+      strMealThumb: meal.strMealThumb,
+      strMeal: meal.strMeal,
+      idMeal: meal.idMeal,
+      likes: likeForThisMeal.length === 0 ? 0 : likeForThisMeal[0].likes,
+    };
+  });
 
-  const menuGrids = document.querySelector('.menu-grids');
-  for (let i = 0; i < menuArray.length; i += 1) {
-    const mealsGridsSring = `
+  combinedArray.forEach((mealWithLike) => {
+    const string = `
       <div>
-        <img src="${menuArray[i].strMealThumb}" alt="Meal Image" class="meal-img">
-          <div class="meal-description">
-            <p class="title">${menuArray[i].strMeal}</p>
-            <div class="like" id="${menuArray[i].idMeal}">
-              <button type="button" class="click-like-btn">
-              <i class="fa fa-heart like-btn"></i>
-              </button>
+        <img src="${mealWithLike.strMealThumb}" alt="meal" class="meal-img">
+        <div class="meal-details">
+          <div class="meal-desc">
+            <p class="title m-0">${mealWithLike.strMeal}</p>
+            <div class="like m-0" id="${mealWithLike.idMeal}">
+              <p class='likes m-0'>${mealWithLike.likes}</p>
+              <i class="fa-solid fa-heart like-btn"></i>
             </div>
           </div>
-          <div class="likes-number">
-            <span class="number-span"> </span>
-            <p class="like-text"> likes </p>
-          </div>
           <button type="button" class="comment-btn">Comments</button>
+        </div>
       </div>`;
-    const parsedElement = parser.parseFromString(mealsGridsSring, 'text/html').body.firstChild;
 
-    menuGrids.append(parsedElement);
+    const stringElement = parser.parseFromString(string, "text/html").body
+      .firstChild;
 
-     const likeBtn = parsedElement.querySelector('.like-btn');
-    const likesFigure = document.querySelector('.number-span');
-    likeBtn.addEventListener('click', (e) => {
+    const likeBtn = stringElement.querySelector(".like-btn");
+    const likeEl = stringElement.querySelector(".likes");
+
+    likeBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      clickLoveBtn(menuArray[i].idMeal);
-      menuArray[i].likes += 1;
-      likesFigure.innerHTML = `${menuArray[i].likes}`;
-    }); 
+      postLike(mealWithLike.idMeal);
+      mealWithLike.likes += 1;
+      likeEl.innerHTML = `${mealWithLike.likes}`;
+    });
 
     mealsSection.append(stringElement);
 
-    const commentbtn = stringElement.querySelector('.comment-btn');
-    const popUpSection = document.querySelector('.popup-section');
-    // popUpSection.className = 'comment-wrapper';
-    popUpSection.hight = '100vh';
-    let str = `div class="popup-details"
-    <img src = "" alt = "Image in tghe popup" class="popup-img">
-    <div class="popup-desc">
-      <h3 class="title-comment> example <h3>
-    </div>
-    </div>
-    `;
-
-    const parsedComment = parser.parseFromString(str, 'text/html').body.firstChild;
-    popUpSection.append(parsedComment);
-    commentbtn.addEventListener('click', (e) => {
+    const commentbtn = stringElement.querySelector(".comment-btn");
+    commentbtn.addEventListener("click", (e) => {
       e.preventDefault();
-      popUpSection.classList.remove('hide');
+      popUpSection.classList.remove("hidden");
       showPopup(mealWithLike.idMeal);
     });
-  }; // End of tghe for loop
-  
-}; // End of window onload functions
+  });
+  const totalItems = ItemsCounter();
+  const itemsCounterEl = document.querySelector(".items-counter");
+  itemsCounterEl.innerHTML = `(${totalItems})`;
+};
+
+init();
