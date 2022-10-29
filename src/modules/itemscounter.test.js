@@ -15,7 +15,7 @@ test('Check if the number of menu items is two when a section with two div block
   document.body.innerHTML = '<section class="menu-grids"> <div class="menu-item"> menu2</div> <div class="menu-item"> menu2</div></section>';
   expect(itemCounter()).toBe(2);
 });
-test('Should return 0, i.e., inserting fetched data is unsuccessful due to wron section class', () => {
+test('Should return 0, i.e., inserting fetched data is unsuccessful due to wrong section class', () => {
   document.body.innerHTML = '<section class="menu"> <div class="menu-item"> menu</div> </section>';
   expect(itemCounter()).toEqual(0);
 });

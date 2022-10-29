@@ -11,9 +11,9 @@
 - Frameworks: Jest unit testing framework.
 - Technologies used: VS code editor, Github, Gitflows, webpack, JSDOM, JS modules, .babelrc, npm. 
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://www.loom.com/share/2e5639ffe4904400ad7a9baaba57e9f7)
 
 
 ## Getting Started
