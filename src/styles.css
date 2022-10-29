@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: steelblue;
+}
+
+img {
+  width: initial;
+}
+
+.wrapper {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-color: #2d2013;
+}
+
+header {
+  background-color: #23180d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo,
+.navlink {
+  padding: 0 100px;
+}
+
+.navlink {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.menu-item {
+  padding-left: 20px;
+}
+
+.menu-link {
+  color: #fff;
+  font-weight: 600;
+}
+
+.active,
+.menu-link:hover {
+  background-color: #c52d2f;
+  padding: 5px 12px;
+  border-radius: 3px;
+  line-height: 24px;
+  display: inline-block;
+}
+
+.meal-img {
+  width: 300px;
+  height: 300px;
+}
+
+.menu-grids {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  row-gap: 40px;
+  padding-bottom: 20px;
+}
+
+.title,
+.like-text {
+  color: #fff;
+}
+
+.forum-links-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.forum-links {
+  display: flex;
+  align-items: center;
+}
+
+.meal-search {
+  width: 120px;
+  padding: 5px 0 5px 10px;
+  border-radius: 4px;
+  background-color: #fff;
+  margin-left: 10px;
+}
+
+.menu-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.like-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+}
+
+.like-btn {
+  cursor: pointer;
+}
+
+.like-btn:active {
+  color: rgb(228, 35, 115);
+}
+
+.like-btn:hover {
+  color: purple;
+}
+
+.likes-number-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 50px;
+  gap: 3px;
+}
+
+.number-span {
+  color: #fff;
+  font-weight: 700;
+}
+
+.hide {
+  display: none;
+}
+
+.comment-btn {
+  background-color: #0d302b;
+  color: #fff;
+  padding: 5px 7px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Footer style */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1em;
+  background-color: #10141a;
+  color: #d2d1d3;
+  height: 100px;
+}
+
+.footer a {
+  color: #e1362c;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: green;
+  transition: all 0.3s ease-in;
+  transform: scale(1.1);
+}
+
+.copyright {
+  color: #fff;
+}
+
+/* Homepage styling */
+.homepage-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homepage-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.meal-title {
+  font-size: 36px;
+}
+
+.btn-group {
+  background-color: #fb0;
+  width: 150px;
+  align-content: center;
+}
+
+.paypal,
+.subscribe {
+  padding: 3px 0;
+  border: none;
+  background-color: #fb0;
+}
+
+.horiz {
+  width: 90%;
+  margin: 0 auto;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.total-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.item-counter-text,
+.item-counter {
+  color: #fff;
+}
+
+.item-counter {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 767.98px) {
+  .navlink {
+    display: none;
+  }
+
+  .humburger {
+    margin-right: 20px;
+    border: none;
+    font-size: 15px;
+    background-color: #fff;
+  }
+}
