@@ -1,15 +1,15 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# JavaScript Capstone Project
 
-> Description the project.
+> This JavaScript capstone project is a capstone project for Module#2 of the Microverse series of Modules. As a capstone project, the development of this project is broader compaired to other block projects and requires skills obtained from the past four weeks JavaScript programming and other web development backgrounds. It is a meals web application for Canadian meals. This meal web application is meant to display the meal menu items on the menu grid, the number of meal menu items on the homepage dynamically. You can also post likes to the menu item see the number of likes for each meal menu items. The web application is dynamic that most of the contents are displayed dynamically. JavaScript script is used to implement the dynamic part of the project. 
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Major languages: HTML, CSS, JavaScript.
+- Frameworks: Jest unit testing framework.
+- Technologies used: VS code editor, Github, Gitflows, webpack, JSDOM, JS modules, .babelrc, npm. 
 
 ## Live Demo (if available)
 
@@ -18,37 +18,33 @@
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+**You can clone my repository and add contributions freely. To clone my repository, use the command, `git clone https://github.com/amare1990/JavaScript-Capstone-Project.git`. You can aslo remove unnecessary components. For example, you can remove testing files from my repository.**
 
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-
 ### Setup
+You have to install npm package manager globally.
 
 ### Install
+1. Go to the folder of my repository you cloned.
+2. Install webpack and webpack-cli using the command `npm install --save-dev webpack webpack cli`
+3. Install .babelrc file to use JavaScript modules
+4. Install Jest using the command, `npm install --save-dev jest`.
 
 ### Usage
+First build the project using the command, `npm run build`.
+Then use the command `npm run & npm start` to run, update and start the web dev-server.
 
 ### Run tests
-
-### Deployment
-
+USe the command for testing, `npm run test`.
 
 
-## Authors
+## Author
 
-👤 **Author1**
+👤 **Amare Kassa**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
+- GitHub: [@githubhandle](https://github.com/amare1990)
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
@@ -56,7 +52,7 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/amare1990/JavaScript-Capstone-Project/issues).
 
 ## Show your support
 
@@ -70,6 +66,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT/https://github.com/amare1990/JavaScript-Capstone-Project](./LICENSE) licensed.
