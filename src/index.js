@@ -54,16 +54,16 @@ window.onload = async () => {
       <div class="menu-item">
         <img src="${menuItem.strMealThumb}" class="meal-img" alt="Meal Image">
           <div class="menu-description">
-            <p class="title">${menuItem.strMeal}</p>
-            <div class="like" id="${menuItem.idMeal}">        
+            <div class="like-wrapper"> 
+              <p class="title">${menuItem.strMeal}</p>        
               <button type="button" class="click-like-btn">
                 <i class="fa fa-heart like-btn"></i>
               </button>
             </div>
-          </div>
-          <div class="likes-number"> 
-            <span class="number-span"> ${menuItem.likes} </span>
-            <p class="like-text"> likes </p>
+            <div class="likes-number-wrapper"> 
+              <span class="number-span"> ${menuItem.likes} </span>
+              <p class="like-text"> likes </p>
+            </div>
           </div>
           <button type="button" class="comment-btn">Comments</button>
       </div>`;
